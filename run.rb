@@ -32,49 +32,68 @@ end
 
 
 def all_names
-
+    instructors.map{|coaches_and_leads|
+    coaches_and_leads[:name]
+    }
 end
 
-
-
 def name_and_role
-
+    array=[]
+    hash={}
+    instructors.map{|coaches_and_leads|
+    all_names.map{|name|
+    hash[name] =coaches_and_leads[:role]
+    }
+    array << hash 
+    }
 end
 
 
 
 def all_coaches
-
+    instructors.select{|coaches_and_leads|
+     coaches_and_leads[:role] == "Coach"
+}
 end
 
 
 
 def all_leads
-
+    instructors.select{|coaches_and_leads|
+    coaches_and_leads[:role] == "Lead"
+}
 end
 
 
 
 def first_instructor_with_a_car
-
+    instructors.find{|coaches_and_leads|
+     coaches_and_leads[:owns_car] == true
+    }
 end
 
 
 
 def instructors_with_more_than_1_sibling
-
+    instructors.select{|coaches_and_leads|
+    coaches_and_leads[:siblings] > 1
+   }
 end
 
 
 
 def most_siblings
-
+    instructors.max_by{|coaches_and_leads|
+    coaches_and_leads[:siblings]
+    }
 end
 
 
 
 def total_siblings
-
+    instructors.sum{|coaches_and_leads|
+    coaches_and_leads[:siblings]
+    }
 end
 
 
