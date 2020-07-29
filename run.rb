@@ -31,13 +31,25 @@ end
 
 
 
-def all_names
+
+def all_names(instructor_info)
+    count = 0 
+    n_a = []
+    while count < instructor_info.length 
+     n_a << instructor_info[count][:name]
+     count += 1
+    end
+    n_a
+    binding.pry
 
 end
 
 
 
-def name_and_role
+def name_and_role(instructor_info)
+    instructor_info.map{ |name, role|
+       # in
+}
 
 end
 
@@ -80,5 +92,5 @@ end
 
 
 
-binding.pry
+#binding.pry
 0
