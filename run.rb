@@ -37,17 +37,15 @@ def all_names
     }
 end
 
-def name_and_role
-    array=[]
-    hash={}
-    instructors.map{|coaches_and_leads|
-    all_names.map{|name|
-    hash[name] =coaches_and_leads[:role]
-    }
-    array << hash 
-    }
+def name_and_role    
+    Hash[all_names.zip(role)]
 end
 
+def role
+    instructors.map{|coaches_and_leads|
+    coaches_and_leads[:role]
+    }
+end
 
 
 def all_coaches
