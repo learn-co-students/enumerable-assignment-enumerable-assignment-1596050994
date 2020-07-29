@@ -32,28 +32,36 @@ end
 
 
 def all_names
-
+    instructors.map do|instructors_element| 
+        instructors_element[:name]
+    end
 end
 
 
 
 def name_and_role
-
+    name = 
+    instructors.map do |instructors_element|
+    end
 end
 
-
+binding.pry
 
 def all_coaches
-
+    instructors.find do |instructors_element|
+        instructors_element[:role] == "Coach"
+    end
 end
 
 
 
 def all_leads
-
+    instructors.find do |instructors_element|
+        instructors_element[:role] == "Lead"
+    end
 end
 
-
+binding.pry
 
 def first_instructor_with_a_car
 
