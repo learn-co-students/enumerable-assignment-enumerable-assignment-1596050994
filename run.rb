@@ -31,19 +31,22 @@ end
 
 
 
-def all_names
+def all_names(name)
+  instructors.select do |name|
+  instructers[:name]
+ end
+end 
+instructors
 
+instructors = []
+def name_and_role(key, value)
+instructors.map do |key, value|
+instructors[:]
 end
 
+# lost without my notes...failed. 
 
-
-def name_and_role
-
-end
-
-
-
-def all_coaches
+def all_coaches()
 
 end
 
