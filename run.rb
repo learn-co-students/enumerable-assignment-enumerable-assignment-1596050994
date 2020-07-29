@@ -31,17 +31,24 @@ end
 
 
 
-def all_names
-
+def all_name
+    
+    instructors.collect do |names|
+     names[:name] 
 end
+
 
 
 
 def name_and_role
-
+    new_ary() 
+        instructors[:name][:role].map do |data_item|
+           data_item[:name][:role] += new_ary()
+        
 end
 
 
+binding.pry
 
 def all_coaches
 
@@ -80,5 +87,5 @@ end
 
 
 
-binding.pry
-0
+#binding.pry
+#0
