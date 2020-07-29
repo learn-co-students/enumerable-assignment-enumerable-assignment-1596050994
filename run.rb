@@ -30,15 +30,17 @@ def instructors
 end
 
 
-
+#hould return an array of all the instructors' names:
 def all_names
-
-end
+     all_names = instructor.map do |name_hash|
+            name_hash[:name]
+    end
 
 
 
 def name_and_role
-
+    names = instructor.map do |instructor_hash|
+        instructor_hash[:name][:role]
 end
 
 
@@ -50,7 +52,9 @@ end
 
 
 def all_leads
-
+    lead_instructors = instructor.map do |instructor_hash|
+        instructor_hash[:lead][:name]
+    end
 end
 
 
@@ -76,9 +80,3 @@ end
 def total_siblings
 
 end
-
-
-
-
-binding.pry
-0
