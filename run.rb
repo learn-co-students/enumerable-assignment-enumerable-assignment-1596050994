@@ -1,5 +1,6 @@
 require 'pry'
 
+
 def instructors
     [
         {
@@ -29,28 +30,38 @@ def instructors
     ]
 end
 
-
-
 def all_names
-
+    all_the_names = instructors.map do |instructors_hash|
+        instructors_hash[:name]
+    end
+    return all_the_names
 end
 
 
 
 def name_and_role
+    instructors.map do |instructors_hash|
+        instructors_hash.select {|key, value| key == [:name]
+    end
 
 end
 
 
 
 def all_coaches
-
+    all_the_coaches = instructors.map do |instructors_hash|
+        instructors_hash[:role] == "Coach"
+    end
+    return all_the_coaches
 end
 
 
 
 def all_leads
-
+    all_the_leads = instructors.map do |instructors_hash|
+        instructors_hash[:role] == "Lead"
+    end
+    return all_the_leads
 end
 
 
@@ -79,6 +90,5 @@ end
 
 
 
-
-binding.pry
+#binding.pry
 0
