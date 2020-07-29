@@ -31,8 +31,10 @@ end
 
 
 
-def all_names
-
+def all_names (array)
+    array.collect do |instructors_info|
+            instructors[:name]
+    end
 end
 
 
@@ -80,5 +82,3 @@ end
 
 
 
-binding.pry
-0
