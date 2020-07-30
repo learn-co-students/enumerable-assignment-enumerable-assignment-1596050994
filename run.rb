@@ -77,11 +77,22 @@ def most_siblings
 end
 
 
+# def total_siblings
+#     instructors.sum do |instructor_hash|
+#         instructor_hash[:siblings]
+#     end
+# end
+
 def total_siblings
-    instructors.sum do |instructor_hash|
-        instructor_hash[:siblings]
+    instructors.reduce(0) do |total, instructor_hash|
+        total += instructor_hash[:siblings]
     end
 end
+
+binding.pry
+total_siblings
+
+
 
 binding.pry
 run
