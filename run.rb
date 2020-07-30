@@ -31,63 +31,85 @@ def instructors
 end
 
 def all_names
-    all_the_names = instructors.map do |instructors_hash|
-        instructors_hash[:name]
+    instructors.map do |instructors|
+        instructors[:name]
+        #binding.pry
     end
-    return all_the_names
 end
+
+all_names
 
 
 
 def name_and_role
-    instructors.map do |instructors_hash|
-        instructors_hash.select {|key, value| key == [:name]
+    instructors.map do |instructors|
+       {instructors[:name] => instructors[:role]}
+       #binding.pry
     end
-
 end
+
+name_and_role
 
 
 
 def all_coaches
-    all_the_coaches = instructors.map do |instructors_hash|
-        instructors_hash[:role] == "Coach"
+    instructors.select do |instructors|
+        instructors[:role] == "Coach"
+        #binding.pry
     end
-    return all_the_coaches
 end
+
+all_coaches
 
 
 
 def all_leads
-    all_the_leads = instructors.map do |instructors_hash|
-        instructors_hash[:role] == "Lead"
+    instructors.select do |instructors|
+        instructors[:role] == "Lead"
     end
-    return all_the_leads
 end
+
+all_leads
 
 
 
 def first_instructor_with_a_car
-
+    instructors.find do |instructors|
+        instructors[:owns_car]
+        #binding.pry
+    end
 end
 
+first_instructor_with_a_car
 
 
 def instructors_with_more_than_1_sibling
-
+    instructors.select do |instructors|
+        instructors[:siblings] > 1
+    end
 end
+
+instructors_with_more_than_1_sibling
 
 
 
 def most_siblings
-
+    instructors_with_more_than_1_sibling.max do |instructors|
+            instructors[:siblings]
+    end
 end
 
+most_siblings
 
 
 def total_siblings
-
+   all_number_of_siblings = instructors.map do |instructors|
+        instructors[:siblings]
+   end
+   total_number_of_siblings = all_number_of_siblings.sum
 end
 
+total_siblings
 
 
 #binding.pry
