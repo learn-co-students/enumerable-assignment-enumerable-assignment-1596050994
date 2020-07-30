@@ -51,6 +51,8 @@ end
 binding.pry
 
 def all_coaches
+    instructors.collect do |coaches|
+        coaches[] 
 
 end
 
