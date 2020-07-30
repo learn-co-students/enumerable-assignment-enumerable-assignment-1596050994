@@ -1,7 +1,7 @@
 require 'pry'
 
 def instructors
-   instructors = [
+    [
         {
             name: "Annie Z",
             role: "Coach",
@@ -32,70 +32,81 @@ end
 
 
 def all_names
-  instructors.map do |name|
-    instructors[:name]
+  instructors.map do |instructor_hash|
+    instructor_hash[:name]
   end
 end
 
 
 
-# def name_and_role
-#   instructors.map do |name|
-#     instructors[:name]
-#   end
-#   return {}
-# end
+def name_and_role
+  instructors.map do |instructor_hash|
+    {instructor_hash[:name] => instructor_hash[:role]}
+  end
+end
 
 
 
 def all_coaches
-  instructors.select do |coach|
-    instructors[:role] == "Coach"
+  instructors.select do |instructor_hash|
+    instructor_hash[:role] == "Coach"
   end
 end
 
 
 
 def all_leads
-  instructors.select do |lead|
-    instructors[:role] == "Lead"
+  instructors.select do |instructor_hash|
+    instructor_hash[:role] == "Lead"
   end
 end
 
 
 
 def first_instructor_with_a_car
-  instructors.find do |instructor|
-     instructors[:owns_car] = true
+  instructors.find do |instructor_hash|
+    instructor_hash[:owns_car] == true
   end
 end
 
 
 
 def instructors_with_more_than_1_sibling
-  instructors.select do |sibling|
-    instructors[:siblings] > 1
+  instructors.select do |instructor_hash|
+    instructor_hash[:siblings] > 1
+  end
 end
 
 
 
 def most_siblings
-  instructors.max_by do |sibling|
-    instructors[:siblings]
+  instructors.max_by do |instructor_hash|
+    instructor_hash[:siblings]
   end
 end
 
 
 
 def total_siblings
-  total = instructors.map do |sibling|
-    instructors[:siblings] 
-  end
-  total.sum
+    instructors.sum do |instructor_hash|
+        instructor_hash[:siblings]
+    end
 end
+# def total_siblings
+#   total = instructors.map do |instructor_hash|
+#     instructor_hash[:siblings] 
+#   end
+#   total.sum
+# end
 
 
+array_of_all_names = all_names()
+array_of_name_and_role = name_and_role()
+array_of_coaches = all_coaches()
 
+sylwia = first_instructor_with_a_car()
+annie_eric = instructors_with_more_than_1_sibling()
+eric = most_siblings()
 
-# binding.pry
-# 0
+binding.pry
+0
